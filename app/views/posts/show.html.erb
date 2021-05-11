@@ -1,0 +1,14 @@
+<%= render 'header' %>
+<h1>More informations</h1>
+<div class="post">
+	<p>Tweeted by you at: <%= @post.created_at %> and Updated at <%= @post.updated_at %> by <%= @post.user.name %> </p>
+	<hr>
+	<p>Content: <%= @post.content %></p>
+	<div>
+		<%unless @post.image.blank? %>
+	    	<%= image_tag @post.image.url %>
+	    <%end%>
+	</div>
+</div>
+
+<%= render 'footer' %>

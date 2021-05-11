@@ -1,0 +1,43 @@
+<header class="clearfix">
+<div class="header-container">
+      <div class="header-menu">
+      	<div class="left"><%= image_tag("/logo_face.png", style: "height:90px;width:90px;") %></div>
+   		 <div class="Text">FacebookClone</div>
+
+        <div class="">
+
+          <% if logged_in? %>
+          <%= link_to 'New Post', new_post_path, class: "link" %>
+          <i class="fas fa-home"> <%= link_to "Home", posts_path,  class: "link" %> </i>
+          <% end %>
+        </div>
+        <div class="">
+          <% if logged_in? %>
+           <%= link_to "Logout", session_path(current_user.id), method: :delete %>
+         <% else %>
+           <%= link_to "Sign up", new_user_path %> |
+           <%= link_to "Login", new_session_path %>
+         <% end %>
+        </div>
+      </div>
+    </div>
+</header>
+<section class="section">
+<h1>Log In</h1>
+
+ <div class="form">
+  <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+  <br>
+  <%= f.email_field :email, placeholder: "Email..." %>
+  <br>
+  <br>
+  <%= f.password_field :password, placeholder: "Password..."%>
+  <br>
+  <br>
+  <%= f.submit "Log In", class: "submit" %>
+  <% end %>
+</div>
+</section>
+  <footer>
+    © ︎ divecorp 2021 - facebookclone
+  </footer>

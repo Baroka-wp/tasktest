@@ -1,0 +1,36 @@
+<%= render 'header' %>
+<br>
+<% @posts.each do |post| %>
+  <table>
+
+    <div class="table">
+      <tr>
+        <th">
+          <span><%= image_tag("/user_icon.jpg", style: "height:30px;width:30px;") %></span>
+          <span>Posted by <%= post.user.name %> at <%= post.updated_at.to_date %></span>
+          <hr>
+        </th>
+      </tr>
+
+      <tr>
+        <td>
+          <p class="content"><%= post.content %></p>
+          <%unless post.image.blank? %>
+          <div class="img"> <%= image_tag post.image.url %></div>
+          <%end%>
+          <hr>
+          <div class="btn_block">
+            <div class="bloc"><i class="fas fa-info-circle"></i><%= link_to 'Show more!', post_path(post.id), class: "bloc" %></div>
+            <%if current_user.id==post.user.id%>
+              <div class="bloc"><i class="fas fa-edit"></i><%= link_to "Edit", edit_post_path(post.id), data: { confirm:'Are you sure you want to edit this?'}, class: "bloc" %></div>
+              <div class="bloc"><i class="fas fa-trash-alt"></i><%= link_to 'Delete', post_path(post.id), method: :delete ,data: { confirm: 'Are you sure you want to delete this?'}, class: "bloc" %></div>
+            <%end%>
+          </div>
+        </td>
+      </tr>
+    </div>
+  </table>
+  <br>
+<% end %>
+
+<%= render 'footer' %>

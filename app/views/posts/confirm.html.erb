@@ -1,0 +1,17 @@
+<%= render 'header' %>
+<h3>The following information is to be sent.</h3>
+<div class="post">
+<%= form_with(model: @post, url: posts_path, local: true) do |form| %>
+	<%= form.hidden_field :content %>
+	<p>Content: <%= @post.content %></p>
+	<%= image_tag(@post.image.url) if @post.image && @post.image.url %>
+  	<%= form.hidden_field :image_cache %>
+	
+	<%= form.submit  "Register", class: "submit" %>
+	<%= form.submit "Return", name: "back", class: "submit" %>
+<% end %>
+
+
+</div>
+<%= render 'footer' %>
+

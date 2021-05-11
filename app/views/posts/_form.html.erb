@@ -1,0 +1,24 @@
+<%= form_with(model: @post, local: true ,url: choose_new_or_edit ) do |form| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2>!!We've got <%= @post.errors.count %> errors!!</h2>
+      <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <br>
+  <div class="post">
+    <p>What are news?</p>
+    <div class="form">
+      <%= form.text_field :content, placeholder: "Write something here...", class: "text"%>
+        <%= image_tag(@post.image.url) if @post.image && @post.image.url %>
+        <%= form.file_field :image %>
+        <%= form.hidden_field :image_cache %>
+    </div>
+    <br>
+    <%= form.submit "Post", class: "submit" %>
+  </div>
+<% end %>

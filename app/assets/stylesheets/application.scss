@@ -1,0 +1,308 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require bootstrap/dist/css/bootstrap.min
+ *= require_tree .
+ *= require_self
+ */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+ *{
+     box-sizing: border-box;
+      border-radius: 5px;
+ }
+
+ body{
+    background: url(/logo2.jpg) center fixed;
+
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     font-family: "Poppins", sans-serif;
+     margin: 0;
+     padding: 0;
+     min-height: 100vh;
+     color: #182956;
+ }
+
+.header-menu{
+   background-color: #ffffffc7;
+   min-width: 70%;
+   margin-top: 1.5rem;
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   border: 2px solid #ffffff;
+   box-shadow: 0 0 10px 2px #3333331A;
+   border-radius: 5px;
+   padding: 0.25rem 1rem;
+ }
+
+ @media only screen and (max-width: 1000px) {
+   .header-menu{
+     width: 100%;
+   }
+   .header-container{
+    display: flex;
+    align-items: center;
+    width: 100%;
+   }
+ }
+
+
+.form {
+  margin: 0 auto;
+  width: 100%;
+  margin: 0;
+  padding: 1.5rem;
+  background-color:#ffffffc7;
+}
+
+
+.form form input{
+  padding: 10px;
+  border: 0.5px solid #182956ab;
+  /*background: transparent;*/
+  width: 100%;
+}
+
+.form form textarea{
+  padding: 10px;
+  border: 0.5px solid #182956ab;
+  background: transparent;
+  width: 100%;
+  min-height: 20vh;
+}
+
+header {
+	background-color: #29a1f2;
+	margin: 0;
+	color: white;
+  	position: relative;
+}
+
+header ul {
+	margin: 0;
+	padding: 0;
+}
+
+header ul .link{
+	color: white;
+  	padding: 15px;
+}
+
+.link-a {
+	text-decoration: none;
+	display: block;
+	 color:#1877f2;
+}
+
+.link_button:hover {
+  	background-color: blue;
+}
+
+header li {
+	float: left;
+	width: auto;
+	list-style: none;
+}
+
+header ul:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+ul .left {
+	float: left;
+}
+
+.right {
+	float: right;
+  	margin-right: 5px;
+}
+
+.Text {
+	padding: 10px;
+	/*margin-top: 25px;*/
+  	font-family: "Lucida Console", "Courier New", monospace;
+  	font-size: 25px;
+  	color: #1877f2;
+}
+
+footer{
+	text-align: center;
+	color: white;
+}
+
+/*footer p {
+	font-size: 0.6rem;
+	color: #fff;
+	text-align: center;
+	vertical-align: middle;
+	display: table-cell;
+}*/
+
+section {
+	text-align: center;
+	overflow: auto;
+    margin-bottom: 60px;
+}
+
+.link_button, .show, .edit, .delete{
+	border-bottom-color: #84ffff;
+    border-left-color: #84ffff;
+    border-right-color: #84ffff;
+    border-top-color: #84ffff;
+	border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-top-style: solid;
+    border-bottom-left-radius: 9999px;
+    border-bottom-right-radius: 9999px;
+    border-top-left-radius: 9999px;
+    border-top-right-radius: 9999px;
+}
+
+.link_button {
+	background-color: #1877f2;
+	color: white;
+  	margin-top: 25px;
+}
+
+.show, .edit, .delete {
+	text-decoration: none;
+	padding: 5px;
+}
+
+hr {
+	color: #4fc3f7;
+	background-color: #4fc3f7;
+}
+
+table {
+	vertical-align: middle;
+	text-align: left;
+	border: none;
+	border-radius: 6px;
+	margin-left: auto;
+    margin-right: auto;
+	width: 100%;
+	box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+	background-color: #f6f6f6;
+}
+
+.menu {
+	display: flex;
+	justify-content: space-between;
+}
+
+.btn_block {
+	display: flex;
+  	justify-content: space-around;
+}
+
+.btn_block{
+	background-color: #1877f2;
+	text-align: center;
+	width: 80px;
+	margin: 10px;
+	line-height: 20px;
+	font-size: 10px;
+	color: white ;
+}
+
+.post {
+	border: 2px solid blue;
+	border-radius: 6px;
+	margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+	background-color: #f6f6f6;
+}
+
+.text {
+	width: 100%;
+	height: 100px;
+	padding: 12px 20px;
+	margin: 8px 0;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.text:focus {
+	border: 1px solid #555;
+}
+
+.submit {
+	width: 25%;
+	background-color: #1877f2;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.hidden {
+	display: none;
+}
+
+#flash {
+	background-color: #00c853;
+	border: 1px solid;
+	border-radius: 2px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 25%;
+}
+
+#error_explanation  {
+	border: 2px solid;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	background-color: red;
+	text-align:center;
+}
+
+#error_explanation li {
+    color:white;
+}
+
+h1,h2 {
+    color:white;
+}
+
+.fa-home{
+    color:#1877f2;
+    font-size: 1.25rem;
+}
+
+.bloc{
+    color:white;
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+}
+.fa-info-circle, .fa-trash-alt, .fa-edit {
+	padding-top: 3px;
+}
